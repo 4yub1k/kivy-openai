@@ -1,0 +1,139 @@
+{
+    "Custom Request": {
+        "Prompt": "",
+        "Response": "",
+        "Engine": "text-davinci-003",
+        "Max tokens": 0,
+        "Temperature": 0.0,
+        "Top p": 0.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["\n"]
+    },
+    "Q&A": {
+        "Prompt": "[EXAMPLE]\nI am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with \"Unknown\".\n\nQ: What is human life expectancy in the United States?\nA: Human life expectancy in the United States is 78 years.\n\nQ: Who was president of the United States in 1955?\nA: Dwight D. Eisenhower was president of the United States in 1955.\n\nQ: Which party did he belong to?\nA: He belonged to the Republican Party.\n\nQ: What is the square root of banana?\nA: Unknown\n\nQ: How does a telescope work?\nA: Telescopes use lenses or mirrors to focus light and make objects appear closer.\n\nQ: Where were the 1992 Olympics held?\nA: The 1992 Olympics were held in Barcelona, Spain.\n\nQ: How many squigs are in a bonk?\nA: Unknown\n\nQ: Where is the Valley of Kings?\nA:",
+        "Response": "[EXAMPLE]\nThe Valley of Kings is located in Luxor, Egypt.",
+        "Engine": "text-davinci-003",
+        "Max tokens": 100,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["\n"]
+    },
+    "Grammar correction": {
+        "Prompt": "[EXAMPLE]\nCorrect this to standard English:\n\nShe no went to the market.",
+        "Response": "[EXAMPLE]\nShe did not go to the market.",
+        "Engine": "text-davinci-003",
+        "Max tokens": 60,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0
+    },
+    "Summarize for a 2nd grader": {
+        "Prompt": "[EXAMPLE]\nSummarize this for a second-grade student:\n\nJupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history. It is named after the Roman god Jupiter.[19] When viewed from Earth, Jupiter can be bright enough for its reflected light to cast visible shadows,[20] and is on average the third-brightest natural object in the night sky after the Moon and Venus.",
+        "Response": "[EXAMPLE]\nJupiter is the fifth planet from the Sun and is very big and bright. It can be seen with our eyes in the night sky and it has been known since ancient times. Its name comes from the Roman god Jupiter. It is usually the third brightest object in the night sky after the Moon and Venus.",
+        "Engine": "text-davinci-003",
+        "Max tokens": 64,
+        "Temperature": 0.7,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0
+    },
+    "Text to command": {
+        "Prompt": "[EXAMPLE]\nConvert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\nOutput: send-msg `find constance` Do we need some bread?\n\nReach out to the ski store and figure out if I can get my skis fixed before I leave on Thursday",
+        "Response": "[EXAMPLE]\nsend-msg `find ski store` Can I get my skis fixed before I leave on Thursday?",
+        "Engine": "text-davinci-003",
+        "Max tokens": 100,
+        "Temperature": 1.0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.2,
+        "Presence penalty": 0.0,
+        "stop": ["\n"]
+    },
+    "English to other languages": {
+        "Prompt":"T[EXAMPLE]ranslate this into 1. French, 2. Spanish and 3. Japanese:\n\nWhat rooms do you have available?\n\n1.",
+        "Response": "[EXAMPLE]\nQuels sont les chambres que vous avez disponibles?\n2. ¿Qué habitaciones tienes disponibles?\n3. どの部屋が利用可能ですか？",
+        "Engine": "text-davinci-003",
+        "Max tokens": 100,
+        "Temperature": 0.3,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0
+    },
+    "Python to natural language": {
+        "Prompt": "[EXAMPLE]\n# Python 3 \ndef remove_common_prefix(x, prefix, ws_prefix): \n    x[\"completion\"] = x[\"completion\"].str[len(prefix) :] \n    if ws_prefix: \n        # keep the single whitespace as prefix \n        x[\"completion\"] = \" \" + x[\"completion\"] \nreturn x \n\n# Explanation of what the code does\n\n#",
+        "Response": "[EXAMPLE]\nThis code removes a common prefix from a dataframe column containing strings. It takes in the dataframe, the prefix to be removed, and a boolean value indicating whether to keep a single whitespace as a prefix. It then removes the prefix from the dataframe column and, if the boolean value is true, adds a single whitespace as a prefix. Finally, it returns the modified dataframe.",
+        "Engine": "text-davinci-003",
+        "Max tokens": 150,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0
+    },
+    "Calculate Time Complexity": {
+        "Prompt": "[EXAMPLE]\ndef foo(n, k):\naccum = 0\nfor i in range(n):\n    for l in range(k):\n        accum += i\nreturn accum\n\"\"\"\nThe time complexity of this function is",
+        "Response": "[EXAMPLE]\nO(n*k). This is because the function has two nested for loops, each of which has a time complexity of O(n) and O(k) respectively. Therefore, the total time complexity is the product of the two, which is O(n*k).",
+        "Engine": "text-davinci-003",
+        "Max tokens": 64,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["\n"]
+    },
+    "Translate programming languages": {
+        "Prompt": "[EXAMPLE]\n##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell",
+        "Response": "[EXAMPLE]\npredictProba :: [String] -> [Double]\npredictProba x = map predictOneProbas x",
+        "Engine": "text-davinci-003",
+        "Max tokens": 150,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["###"]
+    },
+    "Explain code": {
+        "Prompt": "[EXAMPLE]\nclass Log:\n    def __init__(self, path):\n        dirname = os.path.dirname(path)\n        os.makedirs(dirname, exist_ok=True)\n        f = open(path, \"a+\")\n\n        # Check that the file is newline-terminated\n        size = os.path.getsize(path)\n        if size > 0:\n            f.seek(size - 1)\n            end = f.read(1)\n            if end != \"\n\":\n                f.write(\"\n\")\n        self.f = f\n        self.path = path\n\n    def log(self, event):\n        event[\"_event_id\"] = str(uuid.uuid4())\n        json.dump(event, self.f)\n        self.f.write(\"\n\")\n\n    def state(self):\n        state = {\"complete\": set(), \"last\": None}\n        for line in open(self.path):\n            event = json.loads(line)\n            if event[\"type\"] == \"submit\" and event[\"success\"]:\n                state[\"complete\"].add(event[\"id\"])\n                state[\"last\"] = event\n        return state\n\n\"\"\"\nHere's what the above class is doing, explained in a concise way:\n1.",
+        "Response": "[EXAMPLE]\n  The __init__ method creates a new file at the given path if it doesn't already exist, and ensures that the file is newline-terminated.\n2. The log method adds a new event to the log file, with a unique ID.\n3. The state method reads the log file and returns a dictionary containing the set of completed tasks and the last successful event.",
+        "Engine": "text-davinci-003",
+        "Max tokens": 150,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["\"\"\""]
+    },
+    "Science fiction book list maker": {
+        "Prompt": "[EXAMPLE]\nList 10 science fiction books:",
+        "Response": "[EXAMPLE]\n1. 1984 by George Orwell\n2. The War of the Worlds by H.G. Wells\n3. Dune by Frank Herbert\n4. Frankenstein by Mary Shelley\n5. Ender's Game by Orson Scott Card\n6. The Hitchhiker's Guide to the Galaxy by Douglas Adams\n7. The Martian Chronicles by Ray Bradbury\n8. Brave New World by Aldous Huxley \n9. Do Androids Dream of Electric Sheep? By Philip K Dick \n10. I, Robot by Isaac Asimov",
+        "Engine": "text-davinci-003",
+        "Max tokens": 150,
+        "Temperature": 0,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["11."]
+    },
+    "Essay outline": {
+        "Prompt": "[EXAMPLE]\nCreate an outline for an essay about Nikola Tesla and his contributions to technology:",
+        "Response": "[EXAMPLE]\nI. Introduction\nA. Who was Nikola Tesla?\nB. Overview of his contributions to technology\nII. Early Life and Education\nA. Where and when Tesla was born\nB. His education and early career\nIII. Tesla's Contributions to Technology\nA. Alternating Current\nB. Radio and Remote Control\nC. Robotics\nD. X-Rays\nIV. Tesla's Later Years\nA. His later inventions\nB. His death and legacy\nV. Conclusion\nA. Summary of Tesla's life and accomplishments\nB. Impact of Tesla's work on modern technology",
+        "Max tokens": 150,
+        "Temperature": 0.3,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0,
+        "stop": ["11."]
+    },
+    "Interview questions": {
+        "Prompt": "[EXAMPLE]\nCreate a list of 8 questions for my interview with a science fiction author:",
+        "Response": "[EXAMPLE]\n1. What inspired you to write science fiction?\n2. What themes do you typically explore in your work?\n3. How has the genre of science fiction evolved over time?\n4. What do you think sets your work apart from other science fiction authors?\n5. What advice would you give to aspiring science fiction authors?\n6. What are some of the most challenging aspects of writing science fiction?\n7. How has your writing process changed over the years?\n8. What do you think is the most important thing for readers to take away from your work?",
+        "Engine": "text-davinci-003",
+        "Max tokens": 150,
+        "Temperature": 0.5,
+        "Top p": 1.0,
+        "Frequency penalty": 0.0,
+        "Presence penalty": 0.0
+    }
+}

@@ -1,0 +1,150 @@
+#:import utils kivy.utils
+<Label>
+    color: utils.get_color_from_hex('#000000')
+
+<NonPopLabel@Label>
+    padding: 0, 0
+    text_size: self.width, None
+    size_hint: 0.2, 0.4
+
+<TextInput>
+    size_hint: 0.1, 0.2
+    halign: "center"
+    valign: "center"
+    multiline: False
+
+<Button>
+    background_color: (255, 205, 191)
+    on_press: self.background_color = (0, 1, 0, 1)
+    on_release: self.background_color = (255, 205, 191)
+    
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex('#be0000')
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+<OpenAI>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height   # this set the size according to whole window
+        padding: "30sp"    # spaces from sides of window, like html
+        spacing: "12sp"   # space between widget
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex('#000000')
+            Line: # draw line in rectangle shape
+                rectangle: (sp(20), sp(20), root.width - sp(40), root.height - sp(40))
+                
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex('#E7E8C1')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        
+        TextInput:
+            id: key
+            hint_text: "API Key"
+            multiline: False
+            pos_hint: {"top": 1}
+            size_hint: (1, 0.13)
+
+        GridLayout:
+            cols: 4
+            #row_default_height: sp(30)  # change size in grid
+            #row_force_default: True
+            padding: "8sp"    # spaces from sides of window, like html
+            spacing: "10sp"   # space between widget
+            size_hint: 1, 0.5
+
+            NonPopLabel:
+                text: "Max tokens"
+            TextInput:
+                id: max
+                text: "0"
+            
+            NonPopLabel:
+                text: "Temperature"
+            TextInput:
+                id: temp
+                text: "0"
+
+            NonPopLabel:
+                text: "Top p"              
+            TextInput:
+                id: top
+                text: "0.0"
+
+            NonPopLabel:
+                text: "Freq. penalty" 
+            TextInput:
+                id: freq
+                text: "0.0"
+
+            NonPopLabel:
+                text: "Pre. penalty" 
+            TextInput:
+                id: pre
+                text: "0.0"
+
+            NonPopLabel:
+                text: "Stop Seq." 
+            TextInput:
+                id: stop
+                text: '["\\n"]'
+
+        BoxLayout:
+            orientation: "vertical"
+            padding_y: "10sp"    # spaces from sides of window, like html
+            spacing: "10sp"   # space between widget
+            size_hint: (1, 1)
+
+            Label:
+                text: "Prompt"
+                size_hint: 1, 1
+            TextInput:
+                id: prompt
+                padding: sp(5), sp(5)
+                size_hint: (1, None)
+                height: sp(100)
+                halign: "left"
+                multiline: True
+
+            Label:
+                text: "Response"
+                size_hint: 1, 1
+            TextInput:
+                id: resp
+                padding: sp(5), sp(5)
+                size_hint: (1, None)
+                height: sp(100)
+                halign: "left"
+                multiline: True
+
+        GridLayout:
+            cols: 1
+            spacing: "10sp"   # space between widget
+            size_hint: (1, 0.5)
+
+            Button:
+                id: dropdown
+                text: "Custom Request"
+                padding: 5, 5
+                size_hint_y: None
+                height: sp(35)
+            Button:
+                text: "Generate"
+                padding: 5, 5
+                size_hint_y: None
+                height: sp(35)
+                on_release: root.generate()
+            Label:
+                text: "Salah Ud Din | GitHub: @4yub1k"
+                padding: 0, 0
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                size_hint_y: None
+                height: sp(15)
+                font_size: "11sp"
